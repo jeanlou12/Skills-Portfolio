@@ -12,13 +12,13 @@ def show_start():
     frame_start.pack(pady=60)
 
 def show_menu():
-    """Show Frame 2 - Difficulty Level Selection."""
+    """Show Frame 2 - Mid-Level Selection."""
     frame_start.pack_forget()
     frame_quiz.pack_forget()
     frame_menu.pack(pady=40)
 
 def start_quiz(selected_level):
-    """Initialize quiz and switch to Frame 3."""
+    """Set quiz and switch to Frame 3."""
     global level, score, question_num
     level = selected_level
     score = 0
@@ -79,7 +79,7 @@ def checkAnswer():
             next_question()
 
 def next_question():
-    """Move to next question or finish quiz."""
+    "Move to next question or finish quiz."
     global question_num
     question_num += 1
     if question_num <= 10:
@@ -88,7 +88,7 @@ def next_question():
         show_results()
 
 def show_results():
-    """Display final results."""
+    """Display the final results."""
     grade = (
         "A+" if score >= 90 else
         "A" if score >= 80 else
@@ -167,6 +167,7 @@ score_label.pack(pady=5)
 tk.Button(frame_quiz, text="Submit", command=checkAnswer, **btn_style).pack(pady=8)
 tk.Button(frame_quiz, text="Back to Menu", command=show_menu, bg="#95a5a6", fg="white", font=("Arial", 12, "bold"), width=25).pack(pady=8)
 
-# ---------- START APP ----------
+#--START --
 show_start()
+
 root.mainloop() 
