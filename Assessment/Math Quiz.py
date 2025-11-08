@@ -30,11 +30,11 @@ def start_quiz(selected_level):
 def randomInt(level):
     """Generate random numbers based on difficulty."""
     if level == "easy":
-        return random.randint(1, 9), random.randint(1, 9)
+        return random.randint(2, 8), random.randint(2, 8)
     elif level == "moderate":
-        return random.randint(10, 99), random.randint(10, 99)
+        return random.randint(15, 95), random.randint(15, 95)
     else:
-        return random.randint(1000, 9999), random.randint(1000, 9999)
+        return random.randint(1250, 9888), random.randint(1250, 9888)
 
 def decideOperation():
     """Choose addition or subtraction."""
@@ -52,7 +52,7 @@ def next_problem():
     score_label.config(text=f"Score: {score}")
 
 def checkAnswer():
-    """Check user's answer."""
+    """Check the  answer."""
     global score, question_num, attempts
     try:
         user_answer = int(answer_entry.get())
@@ -88,7 +88,7 @@ def next_question():
         show_results()
 
 def show_results():
-    """Display the final results."""
+    "View the final results."""
     grade = (
         "A+" if score >= 90 else
         "A" if score >= 80 else
@@ -171,3 +171,4 @@ tk.Button(frame_quiz, text="Back to Menu", command=show_menu, bg="#95a5a6", fg="
 show_start()
 
 root.mainloop() 
+
